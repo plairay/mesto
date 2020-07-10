@@ -2,8 +2,15 @@
 @import url('./__line/header__line.css');
 
 .header {
-    padding: 0 22%;
     max-width: 882px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 880px) {
+    .header {
+        max-width: 680px;
+    }
 }
 
 @media screen and (max-width: 480px) {
