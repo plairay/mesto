@@ -10,13 +10,21 @@
     margin: 40px auto 0 auto;
     max-width: 882px;
     width: 100%;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Inter', ‘Arial’, sans-serif;
     display: flex;
     justify-content: space-between;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 914px) {
     .profile {
-        max-width: 680px;
+        padding: 0 1%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile {
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
     }
 }

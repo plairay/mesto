@@ -1,0 +1,20 @@
+@import url('./__container/popup__container.css');
+@import url('./__title/popup__title.css');
+@import url('./__form/popup__form.css');
+@import url('./__edit-name/popup__edit-name.css');
+@import url('./__edit-profession/popup__edit-profession.css');
+@import url('./__save-button/popup__save-button.css');
+@import url('./__close-button/popup__close-button.css');
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}

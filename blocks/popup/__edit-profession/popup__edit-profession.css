@@ -1,0 +1,15 @@
+.popup__edit-profession {
+    width: 100%;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-size: 0.875rem;
+    line-height: 17px;
+    box-sizing: border-box;
+    padding-bottom: 13px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 48px;
+}
+
+.popup__edit-profession:focus {
+    outline-style: none;
+}

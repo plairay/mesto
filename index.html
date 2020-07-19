@@ -15,6 +15,7 @@
         </header> 
 
         <main class="content">
+
             <section class="profile">
                 <div class="profile__info">
                     <img src="./images/avatar.jpg" class="profile__image">
@@ -26,7 +27,75 @@
                 </div>
                 <button type="button" class="profile__add-button"></button>
             </section>
+            
+            <section class="cards">
+
+                <div class="card">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="card__image">
+                    <div class="card__name">
+                        <h2 class="card__title">Карачаевск</h2>
+                        <img src="./images/like.png" alt="лайк" class="card__like">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="card__image">
+                    <div class="card__name">
+                        <h2 class="card__title">Гора Эльбрус</h2>
+                        <img src="./images/like.png" alt="лайк" class="card__like">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
+                    <div class="card__name">
+                        <h2 class="card__title">Домбай</h2>
+                        <img src="./images/like.png" alt="лайк" class="card__like">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="card__image">
+                    <div class="card__name">
+                        <h2 class="card__title">Гора Эльбрус</h2>
+                        <img src="./images/like.png" alt="лайк" class="card__like">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
+                    <div class="card__name">
+                        <h2 class="card__title">Домбай</h2>
+                        <img src="./images/like.png" alt="лайк" class="card__like">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Черкессия" class="card__image">
+                    <div class="card__name">
+                        <h2 class="card__title">Карачаево-Черкессия</h2>
+                        <img src="./images/like.png" alt="лайк" class="card__like">
+                    </div>
+                </div>
+            </section>
         </main>
-    </div>`
+        <footer class="footer">
+            <p class="footer__text">
+                &copy; 2020 Mesto Russia
+            </p>
+        </footer>
+    </div>
+    <div class="popup">
+        <div class="popup__container">
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form action="#" class="popup__form">
+                <input type="text" class="popup__edit-name" value="...">
+                <input type="text" class="popup__edit-profession" value="...">
+                <button type="submit" class="popup__save-button">Сохранить</button>
+            </form>
+            <button class="popup__close-button" type="button"></button>
+        </div>
+    </div>
+ <script src="index.js"></script>   
 </body>
 </html>
