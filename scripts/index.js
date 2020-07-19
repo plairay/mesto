@@ -15,21 +15,16 @@ function togglePopup() {
     inputProfession.value = textProfession.textContent;
 }
 
-openPopup.addEventListener('click', togglePopup);
-closePopup.addEventListener('click', togglePopup);
-
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
-    
     textName.textContent = inputName.value;
     textProfession.textContent = inputProfession.value;
 
     togglePopup();
-    
-  
-
 })
 
+openPopup.addEventListener('click', togglePopup);
+closePopup.addEventListener('click', togglePopup);
 
 
