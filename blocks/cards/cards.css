@@ -1,21 +1,16 @@
 .cards {
     margin: 51px auto 0 auto;
     max-width: 882px;
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 282px);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 282px);
     grid-column-gap: 18px;
     grid-row-gap: 21px;
 }
 
-@media screen and (max-width: 914px) {
+@media screen and (max-width: 919px) {
     .cards {
         padding: 0 2%;
     }
 }
 
-@media screen and (max-width: 914px) {
-    .cards {
-       grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    }
-}
