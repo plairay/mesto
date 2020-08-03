@@ -1,10 +1,12 @@
 @import url('./__container/popup__container.css');
 @import url('./__title/popup__title.css');
 @import url('./__form/popup__form.css');
-@import url('./__edit-name/popup__edit-name.css');
-@import url('./__edit-profession/popup__edit-profession.css');
+@import url('./__input/popup__input.css');
 @import url('./__save-button/popup__save-button.css');
 @import url('./__close-button/popup__close-button.css');
+@import url('./__container-image/popup__container-image.css');
+@import url('./__card-image/popup__card-image.css');
+@import url('./__figure/popup__figure.css');
 
 .popup {
     position: fixed;
@@ -16,5 +18,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s linear;
 }
+

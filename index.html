@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page">
+
     <div class="page__container">
 
         <header class="header">
@@ -29,73 +30,60 @@
             </section>
             
             <section class="cards">
-
-                <div class="card">
-                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="card__image">
-                    <div class="card__name">
-                        <h2 class="card__title">Карачаевск</h2>
-                        <img src="./images/like.png" alt="лайк" class="card__like">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="card__image">
-                    <div class="card__name">
-                        <h2 class="card__title">Гора Эльбрус</h2>
-                        <img src="./images/like.png" alt="лайк" class="card__like">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
-                    <div class="card__name">
-                        <h2 class="card__title">Домбай</h2>
-                        <img src="./images/like.png" alt="лайк" class="card__like">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="card__image">
-                    <div class="card__name">
-                        <h2 class="card__title">Гора Эльбрус</h2>
-                        <img src="./images/like.png" alt="лайк" class="card__like">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="card__image">
-                    <div class="card__name">
-                        <h2 class="card__title">Домбай</h2>
-                        <img src="./images/like.png" alt="лайк" class="card__like">
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Черкессия" class="card__image">
-                    <div class="card__name">
-                        <h2 class="card__title">Карачаево-Черкессия</h2>
-                        <img src="./images/like.png" alt="лайк" class="card__like">
-                    </div>
-                </div>
             </section>
+
         </main>
+
         <footer class="footer">
             <p class="footer__text">
                 &copy; 2020 Mesto Russia
             </p>
         </footer>
     </div>
-    <div class="popup">
+
+    <div class="popup popup_type_edit-profile">
         <div class="popup__container">
             <h3 class="popup__title">Редактировать профиль</h3>
             <form action="#" class="popup__form">
-                <input type="text" class="popup__edit-name" value="...">
-                <input type="text" class="popup__edit-profession" value="...">
+                <input type="text" class="popup__input popup__edit-name" value="">
+                <input type="text" class="popup__input popup__edit-profession" value="">
                 <button type="submit" class="popup__save-button">Сохранить</button>
             </form>
             <button class="popup__close-button" type="button"></button>
         </div>
     </div>
- <script src="scripts/index.js"></script>   
+    
+    <div class="popup popup_type_add-image">
+        <div class="popup__container">
+            <h3 class="popup__title">Новое место</h3>
+            <form action="#" class="popup__form">
+                <input type="text" class="popup__input popup__add-place" value="" placeholder="Название">
+                <input type="text" class="popup__input popup__add-url" value="" placeholder="Ссылка на картинку">
+                <button type="submit" class="popup__save-button">Создать</button>
+            </form>
+            <button class="popup__close-button" type="button"></button>
+        </div>
+    </div>
+    
+    <div class="popup popup_type_view-image">
+        <div class="popup__container-image">
+            <img src="" class="popup__card-image">
+            <figure class="popup__figure"></figure>
+            <button class="popup__close-button" type="button"></button>
+        </div>    
+    </div> 
+
+    <template class="template-card">
+        <div class="card">
+            <img src="" alt="" class="card__image">
+            <div class="card__name">
+                <h2 class="card__title"></h2>
+                <button type="button" class="card__like"></button>
+            </div>
+            <button type="button" class="card__delete-button"></button>
+        </div>
+    </template> 
+
+    <script src="scripts/index.js"></script>   
 </body>
 </html>
