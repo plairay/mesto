@@ -1,6 +1,6 @@
 // Попапы
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
-const popupAddImage = document.querySelector('.popup_type_add-image')
+const popupAddImage = document.querySelector('.popup_type_add-image');
 const popupViewImage = document.querySelector('.popup_type_view-image');
 
 // Формы
@@ -91,11 +91,11 @@ function createCard(data) {
 
 function renderCard(data) {
     list.prepend(createCard(data));
-}
+};
 
 initialCards.forEach((data) => {
-    renderCard(data)
-})
+    renderCard(data);
+});
 
 // Сохрание значений из формы
 function formEditSubmitHandler(evt) {
@@ -105,7 +105,7 @@ function formEditSubmitHandler(evt) {
     textProfession.textContent = inputEditProfession.value;
 
     togglePopup(popupEditProfile);
-}
+};
 
 function formAddCardSubmitHandler(evt) {
     evt.preventDefault();
@@ -113,21 +113,21 @@ function formAddCardSubmitHandler(evt) {
     renderCard({name: inputAddPlace.value, link: inputAddUrl.value});
 
     togglePopup(popupAddImage);    
-}
+};
 
 formEdit.addEventListener('submit', formEditSubmitHandler);
 formAddCard.addEventListener('submit', formAddCardSubmitHandler);
 
+function togglePopup(popup) {
+    popup.classList.toggle('popup__opened');
+};
+
 function toggleEditPopup() {
-    popupEditProfile.classList.toggle('popup__opened');
+    togglePopup(popupEditProfile);
 
     inputEditName.value = textName.textContent;
     inputEditProfession.value = textProfession.textContent;
-}
-
-function togglePopup(popup) {
-    popup.classList.toggle('popup__opened');
-}
+};
 // Открытие и закрытие попапов
 openEditPopupButton.addEventListener('click', toggleEditPopup);
 closeEditPopupButton.addEventListener('click', toggleEditPopup);
