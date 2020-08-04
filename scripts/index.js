@@ -24,7 +24,6 @@ const cardFigureText = popupViewImage.querySelector('.popup__figure');
 // Кнопки
 const openEditPopupButton = document.querySelector('.profile__edit-button');
 const openAddPopupButton = document.querySelector('.profile__add-button');
-const saveButton = document.querySelector('.popup__save-button');
 const closeEditPopupButton = popupEditProfile.querySelector('.popup__close-button');
 const closeAddPopupButton = popupAddImage.querySelector('.popup__close-button');
 const closeViewImagePopupButton = popupViewImage.querySelector('.popup__close-button');
@@ -82,6 +81,7 @@ function createCard(data) {
         cardFigureText.textContent = cardTitle.textContent;
     });
 
+
     cardTitle.textContent = data.name;
     cardImage.src = data.link;
     cardImage.alt = data.name;
@@ -97,14 +97,7 @@ initialCards.forEach((data) => {
     renderCard(data)
 })
 
-
-function togglePopup(popup) {
-    popup.classList.toggle('popup__opened');
-
-    inputEditName.value = textName.textContent;
-    inputEditProfession.value = textProfession.textContent;
-}
-
+// Сохрание значений из формы
 function formEditSubmitHandler(evt) {
     evt.preventDefault();
 
@@ -125,19 +118,27 @@ function formAddCardSubmitHandler(evt) {
 formEdit.addEventListener('submit', formEditSubmitHandler);
 formAddCard.addEventListener('submit', formAddCardSubmitHandler);
 
+function toggleEditPopup() {
+    popupEditProfile.classList.toggle('popup__opened');
+
+    inputEditName.value = textName.textContent;
+    inputEditProfession.value = textProfession.textContent;
+}
+
+function togglePopup(popup) {
+    popup.classList.toggle('popup__opened');
+}
 // Открытие и закрытие попапов
-openEditPopupButton.addEventListener('click', () => {
-    togglePopup(popupEditProfile);
-});
-closeEditPopupButton.addEventListener('click', () => {
-    togglePopup(popupEditProfile);
-});
+openEditPopupButton.addEventListener('click', toggleEditPopup);
+closeEditPopupButton.addEventListener('click', toggleEditPopup);
+
 openAddPopupButton.addEventListener('click', () => {
     togglePopup(popupAddImage);
 });
 closeAddPopupButton.addEventListener('click', () => {
     togglePopup(popupAddImage);
 });
+//Закрытие попапа с картинкой
 closeViewImagePopupButton.addEventListener('click', () => {
     togglePopup(popupViewImage);
 });
