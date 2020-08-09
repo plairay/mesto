@@ -75,12 +75,11 @@ function createCard(data) {
     });
     // Открытие попапа с картинкой
     cardImage.addEventListener('click', () => {
-        togglePopup(popupViewImage);
+        openPopup(popupViewImage);
 
         cardImageSrc.src = cardImage.src;
         cardFigureText.textContent = cardTitle.textContent;
     });
-
 
     cardTitle.textContent = data.name;
     cardImage.src = data.link;
@@ -88,7 +87,7 @@ function createCard(data) {
 
     return cardElement;
 }
-
+// Рендер карточки
 function renderCard(data) {
     list.prepend(createCard(data));
 };
@@ -97,52 +96,78 @@ initialCards.forEach((data) => {
     renderCard(data);
 });
 
-// Сохрание значений из формы
+// Сохрание значений из форм
 function formEditSubmitHandler(evt) {
     evt.preventDefault();
 
     textName.textContent = inputEditName.value;
     textProfession.textContent = inputEditProfession.value;
 
-    togglePopup(popupEditProfile);
+    closePopup(popupEditProfile);
 };
 
 function formAddCardSubmitHandler(evt) {
     evt.preventDefault();
 
     renderCard({name: inputAddPlace.value, link: inputAddUrl.value});
+    inputAddPlace.value = '';
+    inputAddUrl.value = '';
 
-    togglePopup(popupAddImage);    
+    closePopup(popupAddImage);    
 };
 
 formEdit.addEventListener('submit', formEditSubmitHandler);
 formAddCard.addEventListener('submit', formAddCardSubmitHandler);
 
-function togglePopup(popup) {
-    popup.classList.toggle('popup__opened');
+// Функции открытия и закрытия попапов
+function openPopup(popup) {
+    popup.classList.add('popup__opened');
+    document.addEventListener('keydown', closePopupByEscape);
 };
 
-function toggleEditPopup() {
-    togglePopup(popupEditProfile);
+function closePopup(popup) {
+    popup.classList.remove('popup__opened');
+    document.removeEventListener('keydown', closePopupByEscape);
+};
 
+function closePopupByOverlay(event) {
+    if(event.target.classList.contains('popup')) {
+        closePopup(event.target);
+    }
+};
+
+function closePopupByEscape(event) {
+    if(event.key === 'Escape') {
+        closePopup(document.querySelector('.popup__opened'));
+    }
+}
+
+openEditPopupButton.addEventListener('click', () => {
+    openPopup(popupEditProfile);
+    
     inputEditName.value = textName.textContent;
     inputEditProfession.value = textProfession.textContent;
-};
-// Открытие и закрытие попапов
-openEditPopupButton.addEventListener('click', toggleEditPopup);
-closeEditPopupButton.addEventListener('click', toggleEditPopup);
+});
+
+closeEditPopupButton.addEventListener('click', () => {
+    closePopup(popupEditProfile);
+});
 
 openAddPopupButton.addEventListener('click', () => {
-    togglePopup(popupAddImage);
+    openPopup(popupAddImage);
 });
 closeAddPopupButton.addEventListener('click', () => {
-    togglePopup(popupAddImage);
-});
-//Закрытие попапа с картинкой
-closeViewImagePopupButton.addEventListener('click', () => {
-    togglePopup(popupViewImage);
+    closePopup(popupAddImage);
 });
 
+
+closeViewImagePopupButton.addEventListener('click', () => {
+    closePopup(popupViewImage);
+});
+
+popupEditProfile.addEventListener('click', closePopupByOverlay);
+popupAddImage.addEventListener('click', closePopupByOverlay);
+popupViewImage.addEventListener('click', closePopupByOverlay);
 
 
 
