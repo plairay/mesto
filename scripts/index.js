@@ -158,10 +158,8 @@ function formAddCardSubmitHandler(evt) {
     })
 
     const card = newCard.getTemplate();
-
     document.querySelector('.cards').prepend(card);
     
-
     closePopup(popupAddImage);
 }; 
 
