@@ -9,12 +9,6 @@ function closePopup(popup) {
     document.removeEventListener('keydown', closePopupByEscape);
 };
 
-function closePopupByOverlay(event) {
-    if(event.target.classList.contains('popup')) {
-        closePopup(event.target);
-    }
-};
-
 function closePopupByEscape(event) {
     if(event.key === 'Escape') {
         closePopup(document.querySelector('.popup__opened'));
@@ -45,12 +39,6 @@ export default class Cards {
     }
 
     _setEventListeners() {
-        // Закрытие по кнопке
-        document.querySelector('.popup_type_view-image').querySelector('.popup__close-button').addEventListener('click', () => {
-            closePopup(document.querySelector('.popup_type_view-image'));
-        })
-        // Закрытие по клику на оверлей
-        document.querySelector('.popup_type_view-image').addEventListener('click', closePopupByOverlay);
         // Открытие карточки
         this._template.querySelector('.card__image').addEventListener('click', this._openImage)
         // Удаление карточки
@@ -59,32 +47,18 @@ export default class Cards {
         this._template.querySelector('.card__like').addEventListener('click', this._likeCard);
     } 
     
-    /*  _addDataToCard() {
-        this._addFormTemplate = document.querySelector('.popup_type_add-image')
-        this._addFormTemplate.content.querySelector('.popup__button').addEventListener('click', () => {
-            this._addFormTemplate.content.querySelector('.popup__add-place').value = document.querySelector('.card__title').textContent
-            this._addFormTemplate.content.querySelector('.popup__add-url').value = this._template.querySelector('.card__image').src
-
-            this._cardsContainer.prepend(this._template);
-        })
-
-        document.querySelector('.popup__add-place').textContent = document.querySelector('.card__title').textContent
-        document.querySelector('.popup__add-url').src = this._template.querySelector('.card__image').src
-        document.querySelector('.popup__add-place').alt = this._template.querySelector('.card__image').alt 
-
-        
-        
-    } */
-
     getTemplate() {
         // Клонирование темплейта
         this._template = this._cardSelector.cloneNode(true);
+        // изображение темплейта
+        const popupImage =  this._template.querySelector('.card__image');
         // Навешивание обработчиков
         this._setEventListeners(); 
 
+        
         this._template.querySelector('.card__title').textContent = this._name;
-        this._template.querySelector('.card__image').src = this._link;
-        this._template.querySelector('.card__image').alt = this._name;
+        popupImage.src = this._link;
+        popupImage.alt = this._name;
 
         return this._template;
     }
