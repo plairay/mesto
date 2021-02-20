@@ -54,6 +54,7 @@ export const inputEditProfession = formEdit.querySelector('.popup__edit-professi
 // Другие DOM элементы
 export const textName = document.querySelector('.profile__title');
 export const textProfession = document.querySelector('.profile__subtitle');
+export const escapeButton = "Escape";
 
 // Кнопки открытия попапов
 export const openEditPopupButton = document.querySelector('.profile__edit-button');

@@ -60,6 +60,7 @@ popupAddCard.setEventListeners();
 
 openAddPopupButton.addEventListener('click', () => {
     popupAddCard.openPopup();
+    addCardValidation.enableValidation();
 });
 
 // открытие картинки
@@ -87,10 +88,3 @@ const cardList = new Section({
 cardList.renderItems();
 
 
-// Массив форм
-// const formsList = Array.from(document.querySelectorAll('.popup__form'));
-// проход по каждой форме
-// formsList.forEach((item) =>{
-//     const formValidation = new FormValidator(settings, item);
-//     formValidation.enableValidation();
-// });
