@@ -142,7 +142,7 @@ function createCard(cardData) {
     const card = cardExample.getTemplate();
     return card;
 }
-
+33
 // карточки полученные с сервера
 api.getInitialCards()
     .then((cards) => {
@@ -189,7 +189,7 @@ openAddPopupButton.addEventListener('click', () => {
 });
 
 // удаление карточки
-const popupDeleteCard = new PopupDelete('.popup__card-delete', (cardData) => {
+const popupDeleteCard = new PopupDelete('.popup_type_card-delete', (cardData) => {
     api.removeCard(cardData.cardId)
         .then(() => {
             cardData.card.remove();
