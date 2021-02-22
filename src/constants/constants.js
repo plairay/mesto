@@ -1,30 +1,3 @@
-// Массив с карточками
-export const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
 
 // Валидация формы
 export const settings = {
@@ -37,15 +10,15 @@ export const settings = {
 };
 
 
-
-
 // Попапы
 export const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 export const popupAddImage = document.querySelector('.popup_type_add-image');
+export const popupEditAvatar = document.querySelector('.popup_type_edit-avatar');
 
 // Формы
 export const formEdit = popupEditProfile.querySelector('.popup__form');
 export const formAddCard = popupAddImage.querySelector('.popup__form');
+export const formEditAvatar = popupEditAvatar.querySelector('.popup__form')
 
 // Инпуты
 export const inputEditName = formEdit.querySelector('.popup__edit-name');
@@ -54,11 +27,13 @@ export const inputEditProfession = formEdit.querySelector('.popup__edit-professi
 // Другие DOM элементы
 export const textName = document.querySelector('.profile__title');
 export const textProfession = document.querySelector('.profile__subtitle');
+export const imageAvatar = document.querySelector('.profile__image');
 export const escapeButton = "Escape";
 
 // Кнопки открытия попапов
 export const openEditPopupButton = document.querySelector('.profile__edit-button');
 export const openAddPopupButton = document.querySelector('.profile__add-button');
+export const avatarPopupButton = document.querySelector('.profile__avatar-container');
 
 
 

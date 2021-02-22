@@ -28,7 +28,6 @@ export default class Popup {
                 this.closePopup();
             }
         });
-
     }
 }
 
